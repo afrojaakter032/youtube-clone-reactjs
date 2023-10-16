@@ -1,4 +1,5 @@
 import {Link} from "react-router-dom"
+import Button from "../UI/Button";
 function Header () {
     const openMenu = () => document.querySelector('.sidebar').classList.add('open')
     return(
@@ -38,9 +39,7 @@ function Header () {
                                 </button>
                             </div>
                             <div>
-                            <button className=" btn btn-circle" title="voice">
-                                <i className="ph ph-microphone"></i>
-                            </button>
+                            <Button icon="ph ph-microphone" title= "voice" />
                         </div>
                         </div>
                     </div>
@@ -50,21 +49,16 @@ function Header () {
                                 <button className=" btn btn-circle bg-transparent" title="search"  onClick= {() => document.querySelector('.search-bar').classList.add('show')}>
                                     <i className=" btn ph ph-magnifying-glass"></i>
                                 </button>
+                                
                             </div>
                         <div className="d-none d-sm-block">
-                            <button className=" btn btn-circle bg-transparent" title="vedio">
-                                <i  className=" btn ph ph-video-camera"></i>
-                            </button>
+                            <Button icon="ph ph-video-camera" title= "vedio"/>
                         </div>
                             <div className="d-none d-sm-block">
-                                <button className=" btn btn-circle bg-transparent" title="notification">
-                                    <i className="ph ph-bell"></i>
-                                </button>
+                                <Button icon="ph ph-bell" title= "notification"/>
                             </div>
                             <div className="dropdown">
-                                <button className="dropbtn btn btn-circle bg-transparent">
-                                    <i className="ph ph-user"></i>
-                                </button>
+                                <Button icon="ph ph-user" title= "user" />
                                 <ul className="dropdown-menu">
                                     <li className="dropdown-item">
                                         <a className="dropdown-link" href="#">Log in</a>

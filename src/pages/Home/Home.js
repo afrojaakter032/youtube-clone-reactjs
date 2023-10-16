@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Layout from "../../components/Layout/Layout";
 
 function Home () {
@@ -41,7 +42,9 @@ function Home () {
                                         <img src="./asstes/images/user2.png" alt="user" />
                                     </div>
                                     <div>
-                                        <div className="card-title">Black Adam-Official trailer</div>
+                                        <div>
+                                            <Link to="/details" className="card-title">Black Adam-Official trailer</Link>
+                                        </div>
                                         <div className="card-sub-title">The world needed a hero.</div>
                                         <div className="card-meta">31M . 1 month ago</div>
                                     </div>

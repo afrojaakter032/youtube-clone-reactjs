@@ -5,12 +5,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {createBrowserRouter,  RouterProvider} from "react-router-dom";
 import Home from './pages/Home/Home';
+import MovieDetails from './pages/MovieDetails/MovieDetails'
 
 const router = createBrowserRouter ([
 
   {
     path: "/",
     element : <Home />,
+  },
+  {
+    path: "/details",
+    element : <MovieDetails />,
   }
 ]);
 
