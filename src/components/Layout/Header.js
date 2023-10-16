@@ -1,5 +1,6 @@
 import {Link} from "react-router-dom"
 function Header () {
+    const openMenu = () => document.querySelector('.sidebar').classList.add('open')
     return(
         <>
         
@@ -8,8 +9,13 @@ function Header () {
                 <div className="row justify-content-between px-3">
                     <div className="col">
                         <div className="d-flex align-items-center gap-3">
-                            <div className="menu-open-btn">
-                                <i className="ph ph-list"></i>
+                            <div>
+                                <button className="menu-open-btn btn"
+                                    title="menu open"
+                                    onClick={openMenu}
+                                >
+                                    <i className="ph ph-list"></i>
+                                </button>
                             </div>
                             <div className="logo">
                                 <Link to="/">

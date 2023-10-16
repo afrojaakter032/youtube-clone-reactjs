@@ -1,11 +1,16 @@
 
 function Sidebar () {
+    const closeMenu = () => document.querySelector('.sidebar').classList.remove('open')
     return (
         <>
         <aside>
                 
                 <div className="sidebar">
-                    <button className=" btn menu-close-btn">
+                    <button className=" btn menu-close-btn"
+                        title="menu close"
+                        onClick={closeMenu}
+
+                    >
                         <i className="ph ph-x"></i>
                     </button>
                     <ul className="sidebar-menu overflow-y-scroll">
