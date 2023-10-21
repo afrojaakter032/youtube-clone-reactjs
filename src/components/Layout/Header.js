@@ -52,13 +52,13 @@ function Header () {
                                 
                             </div>
                         <div className="d-none d-sm-block">
-                            <Button icon="ph ph-video-camera" title= "vedio"/>
+                            <Button className="bg-transparent" icon="ph ph-video-camera" title= "vedio"/>
                         </div>
                             <div className="d-none d-sm-block">
-                                <Button icon="ph ph-bell" title= "notification"/>
+                                <Button className="bg-transparent" icon="ph ph-bell" title= "notification"/>
                             </div>
                             <div className="dropdown">
-                                <Button icon="ph ph-user" title= "user" />
+                                <Button className="bg-transparent" icon="ph ph-user" title= "user" />
                                 <ul className="dropdown-menu">
                                     <li className="dropdown-item">
                                         <a className="dropdown-link" href="#">Log in</a>
