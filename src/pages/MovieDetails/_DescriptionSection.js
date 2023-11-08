@@ -1,6 +1,8 @@
 import React from 'react'
+import { useState } from "react";
 
 export default function DescriptionSection() {
+    let [showMore, setShowMore] = useState(false);
   return (
     <>
 
