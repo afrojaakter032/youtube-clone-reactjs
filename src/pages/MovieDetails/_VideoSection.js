@@ -60,10 +60,6 @@ export default function VideoSection({ movie }) {
                                     </div>
                                 </div>
                             </div>
-    
-    
-    
-    
     </>
   )
 }

@@ -37,9 +37,6 @@ export default function DescriptionSection() {
                                     </button>
                                 </div>
                             </div>
-    
-    
-    
     </>
   )
 }

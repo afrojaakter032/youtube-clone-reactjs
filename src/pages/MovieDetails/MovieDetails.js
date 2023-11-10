@@ -104,7 +104,7 @@ function MovieDetails() {
                     <div className="row">
                         <div className="col-md-8">
                             
-                        <VideoSection movie={{ title: "Card Title 6"}} />
+                        <VideoSection movie={{ title: "Card Title 1"}} />
 
                         <DescriptionSection />
                             <CommentSection />
