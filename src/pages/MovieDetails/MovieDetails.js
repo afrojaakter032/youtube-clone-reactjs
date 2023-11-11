@@ -10,8 +10,6 @@ function MovieDetails() {
     // let movieIndex = 0;
     let [movieIndex, setMovieIndex] = useState(0);
 
-
-
     let movies = [
         {
             title: 'Card Title 1',
@@ -82,7 +80,7 @@ function MovieDetails() {
     let movie = movies[movieIndex];
 
     function previous() {
-        if (movieIndex == 0) {
+        if (movieIndex === 0) {
             return;
         }
 
@@ -90,7 +88,7 @@ function MovieDetails() {
     }
 
     function next() {
-        if (movieIndex == (movies.length - 1)) {
+        if (movieIndex === (movies.length - 1)) {
             return;
         }
 
@@ -103,10 +101,8 @@ function MovieDetails() {
                 <section className="video-details-section px-3">
                     <div className="row">
                         <div className="col-md-8">
-                            
-                        <VideoSection movie={{ title: "Card Title 1"}} />
-
-                        <DescriptionSection />
+                            <VideoSection movie={movie} />
+                            <DescriptionSection />
                             <CommentSection />
                         </div>
 
@@ -121,7 +117,7 @@ function MovieDetails() {
                                 <button
                                     className="btn btn-primary"
                                     onClick={previous}
-                                    disabled={movieIndex == 0}
+                                    disabled={movieIndex === 0}
                                 >
                                     Previous
                                 </button>
@@ -129,7 +125,7 @@ function MovieDetails() {
                                 <button
                                     className="btn btn-primary"
                                     onClick={next}
-                                    disabled={movieIndex == (movies.length - 1)}
+                                    disabled={movieIndex === (movies.length - 1)}
                                 >
                                     Next
                                 </button>
