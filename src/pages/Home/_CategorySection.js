@@ -1,5 +1,32 @@
 import { useState, useEffect } from "react";
 
+function Placeholder() {
+    return(
+        <>
+            <div className="d-flex align-item-center justify-content-between placeholder-glow">
+                {[1,2,3,4,5,6,7,8,9,10].map((item) =>
+            <div className="placeholder py-3 col-1 rounded" key={`category-placeholder-${item}`}></div>)}
+            </div>
+        </>
+    )
+}
+
+function Categories({categories}) {
+    return(
+        <>
+            <div className="d-flex align-item-center gap-3 overflow-x-scroll">
+                {categories.map((category, index) => {
+                    return (
+                        <a href="#" className={`btn ${index===0 ? 'btn-dark' : 'btn-secondary'}`} key={`category-${index}`}>
+                            {category.name}
+                        </a>
+                    );
+                })}
+            </div>
+        </>
+    )
+}
+
 function CategorySection() {
     let [isLoading, setIsLoading] = useState(true)
      let [categories, setCategories]= useState([]);
@@ -37,27 +64,9 @@ function CategorySection() {
     return (
         <>
             <section className="categories-section py-3">
-                {isLoading && (
-                    <>
-                        <div className="d-flex align-item-center justify-content-between placeholder-glow">
-                            {[1,2,3,4,5,6,7,8,9,10].map((item) => <div className="placeholder py-3 col-1 rounded" key={`category-placeholder-${item}`}></div>)}
-                        </div>
-                    </>
-                )}
+                {isLoading ? <Placeholder /> : <Categories categories={categories}/>}
 
-                {!isLoading && (
-                    <>
-                        <div className="d-flex align-item-center gap-3 overflow-x-scroll">
-                            {categories.map((category, index) => {
-                                return (
-                                    <a href="#" className={`btn ${index===0 ? 'btn-dark' : 'btn-secondary'}`} key={`category-${index}`}>
-                                        {category.name}
-                                    </a>
-                                );
-                            })}
-                        </div>
-                    </>
-                )}
+
            </section>
         </>
     );
