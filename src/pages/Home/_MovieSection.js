@@ -1,13 +1,28 @@
 import { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 function Placeholder() {
     return(
         <>
-            <div className="d-flex align-item-center justify-content-between placeholder-glow">
-                {[1,2,3,4,5,6,7,8,9,10].map((item) =>
-            <div className="placeholder py-3 col-1 rounded" key={`category-placeholder-${item}`}></div>)}
-            </div>
+            {[1,2,3,4].map((item) =>
+                <div className="col-12 col-sm-5 col-md-4 col-lg-3">
+                    <div className="card placeholder-glow"key={`category-placeholder-${item}`}>
+                        <div className="card-img">
+                            <div className="placeholder py-3 rounded w-100" style={{height : 350}}></div>
+                            <div className="d-flex gap-3 mt-2">
+                                <div className="placeholder rounded-circle" style={{height : 50, width : 70}}></div>
+                                <div className="w-100">
+                                    <div className="placeholder rounded w-100" style={{height : 30}}></div>
+                                    <div className="placeholder rounded w-100" style={{height : 20}}></div>
+                                    <div className="placeholder rounded w-100" style={{height : 10}}></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </>
     )
 }
@@ -15,31 +30,36 @@ function Placeholder() {
 function Movies({movies}) {
     return(
         <>
-            {movies.map((movie, index) => {
-                return (
-                    <div className="col-md-3" key={`movie-card-${index}`}>
-                        <div className="card">
-                            <div className="card-img">
-                                <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt="Image" />
-                            </div>
-
-                            <div className="d-flex gap-3 mt-2">
-                                <div className="card-user-logo">
-                                    <img src="./asstes/images/user2.png" alt="Image" />
+            <Swiper
+                spaceBetween={20}
+                slidesPerView={5}
+            >
+                {movies.map((movie, index) => {
+                    return (
+                        <SwiperSlide key={`movie-card-${index}`}>
+                            <div className="card">
+                                <div className="card-img">
+                                    <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt="Image" />
                                 </div>
 
-                                <div>
-                                    <div>
-                                        <Link to="/details" className="card-title">{movie.original_title}</Link>
+                                <div className="d-flex gap-3 mt-2">
+                                    <div className="card-user-logo">
+                                        <img src="./asstes/images/user2.png" alt="Image" />
                                     </div>
-                                    <div className="card-sub-title my-1">{movie.overview.substring(0,40)}...</div>
-                                    <div className="card-meta">{movie.release_date}</div>
+
+                                    <div>
+                                        <div>
+                                            <Link to="/details" className="card-title">{movie.original_title}</Link>
+                                        </div>
+                                        <div className="card-sub-title my-1">{movie.overview.substring(0,40)}...</div>
+                                        <div className="card-meta">{movie.release_date}</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                );
-            })}
+                        </SwiperSlide>
+                    );
+                })}
+            </Swiper>
 
         </>
     );
