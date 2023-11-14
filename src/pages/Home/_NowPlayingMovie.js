@@ -16,20 +16,20 @@ function Placeholder() {
             >
             {[1,2,3,4,5].map((item) =>
                 <SwiperSlide>
-                    <div className="col-12 col-sm-5 col-md-4 col-lg-3">
-                        <div className="card placeholder-glow"key={`category-placeholder-${item}`}>
-                            <div className="card-img">
-                                <div className="placeholder py-3 rounded w-100" style={{height : 350}}></div>
-                                <div className="d-flex gap-3 mt-2">
-                                    <div className="w-100">
-                                        <div className="placeholder rounded w-100" style={{height : 30}}></div>
-                                        <div className="placeholder rounded w-100" style={{height : 20}}></div>
-                                        <div className="placeholder rounded w-100" style={{height : 10}}></div>
-                                    </div>
+                    
+                    <div className="card  placeholder-glow"key={`category-placeholder-${item}`}>
+                        <div className="card-img">
+                            <div className="placeholder py-3 rounded w-100" style={{height : 350}}></div>
+                            <div className="d-flex gap-3 mt-2">
+                                <div className="w-100">
+                                    <div className="placeholder rounded w-100" style={{height : 30}}></div>
+                                    <div className="placeholder rounded w-100" style={{height : 20}}></div>
+                                    <div className="placeholder rounded w-100" style={{height : 10}}></div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
                 </SwiperSlide>
             )}
             </Swiper>
@@ -147,12 +147,12 @@ function NowPlayingMovie() {
 
     return (
         <>
-            <section className="vedio-section px-5 mt-5">
+            <section className="vedio-section px-3 py-3 mt-5">
                 <div className="row g-3">
                     <div className="col-lg-12">
                         <div className="h3">Now Playing</div>
                     </div>
-                    {isLoading ? <Placeholder /> : <Movies movies={movies}/>}
+                    <div className="col-lg-12">{isLoading ? <Placeholder /> : <Movies movies={movies}/>}</div>
                 </div>
             </section>
         </>
