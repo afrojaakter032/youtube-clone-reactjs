@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import config from "../../config";
+import ApiService from "../../services/ApiService";
 
 function Placeholder() {
     return(
@@ -50,8 +52,7 @@ function CategorySection() {
     //     {name: 'Lectures'},
     // ];
     useEffect (() => {
-        fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=ab4ce24739fba632c712634a0ace856b')
-            .then (res => res.json())
+        ApiService.get('genre/movie/list')
             .then((data) => {
                 setTimeout (() => {
                     setCategories(data.genres);
@@ -60,6 +61,18 @@ function CategorySection() {
                 },5000);
              });
     }, []);
+
+    // useEffect (() => {
+    //     fetch(`${config.api_base_url}/genre/movie/list?api_key=${(config.api_key)}`)
+    //         .then (res => res.json())
+    //         .then((data) => {
+    //             setTimeout (() => {
+    //                 setCategories(data.genres);
+
+    //                 setIsLoading(false);
+    //             },5000);
+    //          });
+    // }, []);
 
     return (
         <>

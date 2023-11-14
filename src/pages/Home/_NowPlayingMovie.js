@@ -1,28 +1,38 @@
 import { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
+import ApiService from "../../services/ApiService";
+import config from "../../config";
+import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import 'swiper/css/navigation';
 
 function Placeholder() {
     return(
         <>
-            {[1,2,3,4].map((item) =>
-                <div className="col-12 col-sm-5 col-md-4 col-lg-3">
-                    <div className="card placeholder-glow"key={`category-placeholder-${item}`}>
-                        <div className="card-img">
-                            <div className="placeholder py-3 rounded w-100" style={{height : 350}}></div>
-                            <div className="d-flex gap-3 mt-2">
-                                <div className="placeholder rounded-circle" style={{height : 50, width : 70}}></div>
-                                <div className="w-100">
-                                    <div className="placeholder rounded w-100" style={{height : 30}}></div>
-                                    <div className="placeholder rounded w-100" style={{height : 20}}></div>
-                                    <div className="placeholder rounded w-100" style={{height : 10}}></div>
+            <Swiper
+                spaceBetween={20}
+                slidesPerView={5}
+            >
+            {[1,2,3,4,5].map((item) =>
+                <SwiperSlide>
+                    <div className="col-12 col-sm-5 col-md-4 col-lg-3">
+                        <div className="card placeholder-glow"key={`category-placeholder-${item}`}>
+                            <div className="card-img">
+                                <div className="placeholder py-3 rounded w-100" style={{height : 350}}></div>
+                                <div className="d-flex gap-3 mt-2">
+                                    <div className="w-100">
+                                        <div className="placeholder rounded w-100" style={{height : 30}}></div>
+                                        <div className="placeholder rounded w-100" style={{height : 20}}></div>
+                                        <div className="placeholder rounded w-100" style={{height : 10}}></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </SwiperSlide>
             )}
+            </Swiper>
         </>
     )
 }
@@ -31,8 +41,10 @@ function Movies({movies}) {
     return(
         <>
             <Swiper
+                modules={[Navigation]}
                 spaceBetween={20}
                 slidesPerView={5}
+                navigation
             >
                 {movies.map((movie, index) => {
                     return (
@@ -43,10 +55,6 @@ function Movies({movies}) {
                                 </div>
 
                                 <div className="d-flex gap-3 mt-2">
-                                    <div className="card-user-logo">
-                                        <img src="./asstes/images/user2.png" alt="Image" />
-                                    </div>
-
                                     <div>
                                         <div>
                                             <Link to="/details" className="card-title">{movie.original_title}</Link>
@@ -65,7 +73,7 @@ function Movies({movies}) {
     );
 }
 
-function MovieSection() {
+function NowPlayingMovie() {
     let [isLoading, setIsLoading] = useState(true)
     let [movies, setMovies] = useState([]);
     // let movies = [
@@ -128,8 +136,7 @@ function MovieSection() {
     // ];
 
     useEffect (() => {
-        fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=ab4ce24739fba632c712634a0ace856b')
-            .then (res => res.json())
+        ApiService.get('movie/now_playing')
             .then((data) => {
                 setTimeout(() => {
                     setMovies(data.results);
@@ -152,4 +159,4 @@ function MovieSection() {
     );
 }
 
-export default MovieSection;
+export default NowPlayingMovie;

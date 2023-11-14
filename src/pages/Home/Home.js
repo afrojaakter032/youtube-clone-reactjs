@@ -1,6 +1,6 @@
 import Layout from "../../components/Layout/Layout";
 import CategorySection from "./_CategorySection";
-import MovieSection from "./_MovieSection";
+import NowPlayingMovie from "./_NowPlayingMovie";
 
 function Home() {
     return (
@@ -8,7 +8,7 @@ function Home() {
             <Layout>
                 <CategorySection />
 
-                <MovieSection />
+                <NowPlayingMovie />
             </Layout>
         </>
     );
