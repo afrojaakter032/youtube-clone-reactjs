@@ -41,8 +41,20 @@ body {
     background: #000;
     color: #fff;
 }
+/* swiper */
+.swiper-button-next, .swiper-button-prev {
+    height: 40px !important;
+    width: 40px !important;
+    background-color: #fff;
+    color: #000 !important;
+    border-radius: 50%;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
 
 
+.swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 18px !important;
+}
 .bg-transparent {
     background-color: transparent !important;
   }

@@ -70,7 +70,7 @@ function Movies({movies}) {
     );
 }
 
-function NowPlayingMovie() {
+function PopularMovieSection() {
     let [isLoading, setIsLoading] = useState(true)
     let [movies, setMovies] = useState([]);
     // let movies = [
@@ -147,7 +147,7 @@ function NowPlayingMovie() {
             <section className="vedio-section px-3 py-3 mt-5">
                 <div className="row g-3">
                     <div className="col-lg-12">
-                        <div className="h3">Now Playing</div>
+                        <div className="h3">Popular Movie</div>
                     </div>
                     <div className="col-lg-12">{isLoading ? <Placeholder /> : <Movies movies={movies}/>}</div>
                 </div>
@@ -156,4 +156,4 @@ function NowPlayingMovie() {
     );
 }
 
-export default NowPlayingMovie;
+export default PopularMovieSection;
