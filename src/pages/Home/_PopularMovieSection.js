@@ -133,12 +133,11 @@ function PopularMovieSection() {
     // ];
 
     useEffect (() => {
-        ApiService.get('movie/now_playing')
+        ApiService.get('movie/popular')
             .then((data) => {
-                setTimeout(() => {
                     setMovies(data.results);
+
                     setIsLoading(false)
-                }, 5000);
              });
     }, []);
 
@@ -147,7 +146,14 @@ function PopularMovieSection() {
             <section className="vedio-section px-3 py-3 mt-5">
                 <div className="row g-3">
                     <div className="col-lg-12">
+                    <div className="d-flex align-item-center justify-content-between">
                         <div className="h3">Popular Movie</div>
+                        <div className="fs-1">
+                            <Link to ="/list/popular" className="text-dark text-decoration-none">
+                                <i className="ph ph-dots-three-outline"></i>
+                            </Link>
+                        </div>
+                        </div>
                     </div>
                     <div className="col-lg-12">{isLoading ? <Placeholder /> : <Movies movies={movies}/>}</div>
                 </div>

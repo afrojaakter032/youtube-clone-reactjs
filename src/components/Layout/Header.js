@@ -20,7 +20,7 @@ function Header () {
                             </div>
                             <div className="logo">
                                 <Link to="/">
-                                    <img src="./asstes/images/logo.png" alt="logo" />
+                                    <img src="/asstes/images/logo.png" alt="logo" />
                                 </Link>
                             </div>
                         </div>

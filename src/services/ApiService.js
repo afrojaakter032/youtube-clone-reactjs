@@ -1,12 +1,15 @@
 import config from "../config"
 
 const ApiService ={
-    url: function(path) {
-        return`${config.api_base_url}/${path}?api_key=${(config.api_key)}`;
+    url: function(path, params = {}) {
+        params.api_key = config.api_key;
+        return`${config.api_base_url}/${path}?${new URLSearchParams(params)}`;
     },
 
-    get:function(path) {
-        return fetch(this.url(path)).then (res => res.json())
+    get: function (path, params = {}) {
+        return fetch(
+            this.url(path, params))
+            .then (res => res.json())
     },
 
 }

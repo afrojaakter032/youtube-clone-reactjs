@@ -70,7 +70,7 @@ function Movies({movies}) {
     );
 }
 
-function NowPlayingMovie() {
+function TopRatedSection() {
     let [isLoading, setIsLoading] = useState(true)
     let [movies, setMovies] = useState([]);
     // let movies = [
@@ -133,11 +133,11 @@ function NowPlayingMovie() {
     // ];
 
     useEffect (() => {
-        ApiService.get('movie/now_playing')
+        ApiService.get('movie/top_rated')
             .then((data) => {
-                setMovies(data.results);
+                    setMovies(data.results);
 
-                setIsLoading(false)
+                    setIsLoading(false)
              });
     }, []);
 
@@ -146,10 +146,10 @@ function NowPlayingMovie() {
             <section className="vedio-section px-3 py-3 mt-5">
                 <div className="row g-3">
                     <div className="col-lg-12">
-                        <div className="d-flex align-item-center justify-content-between">
-                        <div className="h3">Now Playing</div>
+                    <div className="d-flex align-item-center justify-content-between">
+                        <div className="h3">Top Rated</div>
                         <div className="fs-1">
-                            <Link to ="/list/now_playing" className="text-dark text-decoration-none">
+                            <Link to ="/list/top_rated" className="text-dark text-decoration-none">
                                 <i className="ph ph-dots-three-outline"></i>
                             </Link>
                         </div>
@@ -162,4 +162,4 @@ function NowPlayingMovie() {
     );
 }
 
-export default NowPlayingMovie;
+export default TopRatedSection;
