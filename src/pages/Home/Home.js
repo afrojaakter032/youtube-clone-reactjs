@@ -3,6 +3,7 @@ import TopRatedSection from "./_TopRatedSection";
 import CategorySection from "./_CategorySection";
 import NowPlayingMovie from "./_NowPlayingMovie";
 import PopularMovieSection from "./_PopularMovieSection";
+import UpcomingMovieSection from "./_UpcomingMovieSection";
 
 
 function Home() {
@@ -16,6 +17,8 @@ function Home() {
                 <PopularMovieSection />
 
                 <TopRatedSection />
+
+                <UpcomingMovieSection />
 
             </Layout>
         </>

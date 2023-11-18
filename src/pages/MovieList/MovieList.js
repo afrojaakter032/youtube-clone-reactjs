@@ -56,6 +56,11 @@ function Movies({movies}) {
     );
 }
 
+function validateLink(url) {
+    const urlPattern = /^(ftp|http|https):\/\/[^ "]+$/;
+    return urlPattern.test(url);
+  }
+
 function MovieList() {
     let [isLoading, setIsLoading] = useState(true)
     let [movies, setMovies] = useState([]);
@@ -64,6 +69,10 @@ function MovieList() {
 
     useEffect (() => {
         setIsLoading(true);
+        if (!validateLink(slug)) {
+            console.error("Invalid slug:", slug);
+            return;
+          }
 
         ApiService.get(`movie/${slug}`, {'page': page, 'language': 'en'})
             .then((data) => {
@@ -71,6 +80,7 @@ function MovieList() {
 
                 setIsLoading(false);
              });
+
     }, [slug, page]);
 
     function previous() {
