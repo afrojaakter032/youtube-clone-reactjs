@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import ApiService from "../../services/ApiService";
+import { redirect } from "react-router-dom";
+
 
 function Placeholder() {
     return(
@@ -56,10 +58,7 @@ function Movies({movies}) {
     );
 }
 
-function validateLink(url) {
-    const urlPattern = /^(ftp|http|https):\/\/[^ "]+$/;
-    return urlPattern.test(url);
-  }
+
 
 function MovieList() {
     let [isLoading, setIsLoading] = useState(true)
@@ -67,13 +66,14 @@ function MovieList() {
     let [page, setPage] = useState(1);
     let { slug } = useParams();
 
+    if( slug ==='now_playing' || slug ==='popular' || slug ==='top_rated' || slug ==='upcoming'){
+
+    } else {
+        return redirect("/");
+    }
+
     useEffect (() => {
         setIsLoading(true);
-        if (!validateLink(slug)) {
-            console.error("Invalid slug:", slug);
-            return;
-          }
-
         ApiService.get(`movie/${slug}`, {'page': page, 'language': 'en'})
             .then((data) => {
                 setMovies(data.results);
