@@ -9,17 +9,8 @@ function Home() {
             <Layout>
                 <CategorySection />
                 {['now_playing', 'popular', 'top_rated', 'upcoming'].map(type =>(
-                    <SliderMovieSection key={type} type={type} />
+                    <SliderMovieSection key={`slider-movie-section-${type}`} type={type} />
                 ))};
-
-
-
-
-
-
-
-
-
             </Layout>
         </>
     );

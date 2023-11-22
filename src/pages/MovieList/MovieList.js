@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import ApiService from "../../services/ApiService";
+import toTitleCase from "../TitleCaseUtility/toTitleCase";
 
 
 
@@ -95,12 +96,7 @@ function MovieList() {
         setPage(page + 1);
     }
 
-    function toTitleCase(str) {
-        return str
-         .split('_')
-         .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-         .join(' ');
-      }
+    
 
     return (
         <>

@@ -5,6 +5,7 @@ import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import toTitleCase from "../TitleCaseUtility/toTitleCase";
 
 function Placeholder() {
     return(
@@ -73,64 +74,6 @@ function Movies({movies}) {
 function SliderMovieSection({type}) {
     let [isLoading, setIsLoading] = useState(true)
     let [movies, setMovies] = useState([]);
-    // let movies = [
-    //     {
-    //         title: 'Black Adam-Official trailer',
-    //         sub_title: 'The world needed a hero.',
-    //         image: './asstes/images/vedios/card1.jpg',
-    //         user_image: './asstes/images/user2.png',
-    //         published: '31M . 1 month ago',
-    //     },
-    //     {
-    //         title: 'Black Adam-Official trailer',
-    //         sub_title: 'The world needed a hero.',
-    //         image: './asstes/images/vedios/card1.jpg',
-    //         user_image: './asstes/images/user2.png',
-    //         published: '31M . 1 month ago',
-    //     },
-    //     {
-    //         title: 'Black Adam-Official trailer',
-    //         sub_title: 'The world needed a hero.',
-    //         image: './asstes/images/vedios/card1.jpg',
-    //         user_image: './asstes/images/user2.png',
-    //         published: '31M . 1 month ago',
-    //     },
-    //     {
-    //         title: 'Black Adam-Official trailer',
-    //         sub_title: 'The world needed a hero.',
-    //         image: './asstes/images/vedios/card1.jpg',
-    //         user_image: './asstes/images/user2.png',
-    //         published: '31M . 1 month ago',
-    //     },
-    //     {
-    //         title: 'Black Adam-Official trailer',
-    //         sub_title: 'The world needed a hero.',
-    //         image: './asstes/images/vedios/card1.jpg',
-    //         user_image: './asstes/images/user2.png',
-    //         published: '31M . 1 month ago',
-    //     },
-    //     {
-    //         title: 'Black Adam-Official trailer',
-    //         sub_title: 'The world needed a hero.',
-    //         image: './asstes/images/vedios/card1.jpg',
-    //         user_image: './asstes/images/user2.png',
-    //         published: '31M . 1 month ago',
-    //     },
-    //     {
-    //         title: 'Black Adam-Official trailer',
-    //         sub_title: 'The world needed a hero.',
-    //         image: './asstes/images/vedios/card1.jpg',
-    //         user_image: './asstes/images/user2.png',
-    //         published: '31M . 1 month ago',
-    //     },
-    //     {
-    //         title: 'Black Adam-Official trailer',
-    //         sub_title: 'The world needed a hero.',
-    //         image: './asstes/images/vedios/card1.jpg',
-    //         user_image: './asstes/images/user2.png',
-    //         published: '31M . 1 month ago',
-    //     },
-    // ];
 
     useEffect (() => {
         ApiService.get(`movie/${type}`)
@@ -141,12 +84,7 @@ function SliderMovieSection({type}) {
              });
     }, []);
 
-    function toTitleCase(str) {
-        return str
-         .split('_')
-         .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-         .join(' ');
-      }
+    
 
     return (
         <>
