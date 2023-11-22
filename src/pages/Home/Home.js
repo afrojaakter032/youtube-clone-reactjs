@@ -1,9 +1,6 @@
 import Layout from "../../components/Layout/Layout";
-import TopRatedSection from "./_TopRatedSection";
 import CategorySection from "./_CategorySection";
-import NowPlayingMovie from "./_NowPlayingMovie";
-import PopularMovieSection from "./_PopularMovieSection";
-import UpcomingMovieSection from "./_UpcomingMovieSection";
+import SliderMovieSection from "./_SliderMovieSection";
 
 
 function Home() {
@@ -11,14 +8,17 @@ function Home() {
         <>
             <Layout>
                 <CategorySection />
+                {['now_playing', 'popular', 'top_rated', 'upcoming'].map(type =>(
+                    <SliderMovieSection key={type} type={type} />
+                ))};
 
-                <NowPlayingMovie />
 
-                <PopularMovieSection />
 
-                <TopRatedSection />
 
-                <UpcomingMovieSection />
+
+
+
+
 
             </Layout>
         </>

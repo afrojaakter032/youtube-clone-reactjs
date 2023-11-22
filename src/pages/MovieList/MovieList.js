@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import ApiService from "../../services/ApiService";
-import { redirect } from "react-router-dom";
+
 
 
 function Placeholder() {
@@ -66,11 +66,11 @@ function MovieList() {
     let [page, setPage] = useState(1);
     let { slug } = useParams();
 
-    if( slug ==='now_playing' || slug ==='popular' || slug ==='top_rated' || slug ==='upcoming'){
+    // if( slug ==='now_playing' || slug ==='popular' || slug ==='top_rated' || slug ==='upcoming'){
 
-    } else {
-        return redirect("/");
-    }
+    // } else {
+    //     return redirect("/");
+    // }
 
     useEffect (() => {
         setIsLoading(true);
@@ -94,6 +94,14 @@ function MovieList() {
     function next() {
         setPage(page + 1);
     }
+
+    function toTitleCase(str) {
+        return str
+         .split('_')
+         .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+         .join(' ');
+      }
+
     return (
         <>
             <Layout>
@@ -102,9 +110,9 @@ function MovieList() {
                         <div className="row g-3">
                             <div className="col-lg-12">
                                 <div className="d-flex align-item-center justify-content-between">
-                                <div className="h3">{slug}</div>
+                                <div className="h3">{toTitleCase(slug)}</div>
                                 <div className="fs-1">
-                                    <Link to ="/list" className="text-dark text-decoration-none">
+                                    <Link to ={`/list/${slug}`} className="text-dark text-decoration-none">
                                         <i className="ph ph-dots-three-outline"></i>
                                     </Link>
                                 </div>

@@ -70,7 +70,7 @@ function Movies({movies}) {
     );
 }
 
-function UpcomingMovieSection() {
+function SliderMovieSection({type}) {
     let [isLoading, setIsLoading] = useState(true)
     let [movies, setMovies] = useState([]);
     // let movies = [
@@ -133,23 +133,30 @@ function UpcomingMovieSection() {
     // ];
 
     useEffect (() => {
-        ApiService.get('movie/upcoming')
+        ApiService.get(`movie/${type}`)
             .then((data) => {
-                    setMovies(data.results);
+                setMovies(data.results);
 
-                    setIsLoading(false)
+                setIsLoading(false)
              });
     }, []);
+
+    function toTitleCase(str) {
+        return str
+         .split('_')
+         .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+         .join(' ');
+      }
 
     return (
         <>
             <section className="vedio-section px-3 py-3 mt-5">
                 <div className="row g-3">
                     <div className="col-lg-12">
-                    <div className="d-flex align-item-center justify-content-between">
-                        <div className="h3">Upcoming Movie</div>
+                        <div className="d-flex align-item-center justify-content-between">
+                        <div className="h3">{toTitleCase(type)}</div>
                         <div className="fs-1">
-                            <Link to ="/list/upcoming" className="text-dark text-decoration-none">
+                            <Link to ={`/list/${type}`} className="text-dark text-decoration-none">
                                 <i className="ph ph-dots-three-outline"></i>
                             </Link>
                         </div>
@@ -162,4 +169,4 @@ function UpcomingMovieSection() {
     );
 }
 
-export default UpcomingMovieSection;
+export default SliderMovieSection;
