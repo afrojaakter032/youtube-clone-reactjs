@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import ApiService from "../../services/ApiService";
-import toTitleCase from "../TitleCaseUtility/toTitleCase";
+import helpers from "../../helpers/helpers";
+import MovieCard from "../../components/MovieCard";
 
 
 
@@ -37,21 +38,7 @@ function Movies({movies}) {
             {movies.map((movie, index) => {
                 return (
                     <div className="col-lg-3" key={`movie-card-${index}`}>
-                        <div className="card">
-                            <div className="card-img">
-                                <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt="Image" />
-                            </div>
-
-                            <div className="d-flex gap-3 mt-2">
-                                <div>
-                                    <div>
-                                        <Link to="/details" className="card-title">{movie.original_title}</Link>
-                                    </div>
-                                    <div className="card-sub-title my-1">{movie.overview.substring(0,40)}...</div>
-                                    <div className="card-meta">{movie.release_date}</div>
-                                </div>
-                            </div>
-                        </div>
+                        <MovieCard movie={movie} />
                     </div>
                 );
             })}
@@ -106,7 +93,7 @@ function MovieList() {
                         <div className="row g-3">
                             <div className="col-lg-12">
                                 <div className="d-flex align-item-center justify-content-between">
-                                <div className="h3">{toTitleCase(slug)}</div>
+                                <div className="h3">{helpers.toTitleCase(slug)}</div>
                                 <div className="fs-1">
                                     <Link to ={`/list/${slug}`} className="text-dark text-decoration-none">
                                         <i className="ph ph-dots-three-outline"></i>
