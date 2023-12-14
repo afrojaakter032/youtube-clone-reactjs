@@ -19,8 +19,8 @@ function Categories({categories}) {
                 {categories.map((category, index) => {
                     return (
                         <a href="#" className={`btn ${index===0 ? 'btn-dark' : 'btn-secondary'}`} key={`category-${index}`}>
-                            {/* {category.name} */}
                             {category && category.name ? category.name : 'Unnamed Category'}
+
                         </a>
                     );
                 })}
