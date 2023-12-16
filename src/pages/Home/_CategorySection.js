@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import ApiService from "../../services/ApiService";
+import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+
 
 function Placeholder() {
     return(
@@ -13,15 +16,17 @@ function Placeholder() {
 }
 
 function Categories({categories}) {
+    let { slug, name } = useParams();
     return(
         <>
             <div className="d-flex align-item-center gap-3 overflow-x-scroll">
                 {categories.map((category, index) => {
                     return (
-                        <a href="#" className={`btn ${index===0 ? 'btn-dark' : 'btn-secondary'}`} key={`category-${index}`}>
-                            {category && category.name ? category.name : 'Unnamed Category'}
+                        <Link to={`/category-movie-list/${category.id}/${category.name}`} className={`btn btn-secondary ${slug == category.id ? 'active' : ''}`} key={`category-${index}`}>
+                        {/* {category && category.name ? category.name : 'Unnamed Category'} */}
+                        {category.name}
 
-                        </a>
+                        </Link>
                     );
                 })}
             </div>

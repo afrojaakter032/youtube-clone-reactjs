@@ -7,6 +7,7 @@ import {createBrowserRouter,  RouterProvider} from "react-router-dom";
 import Home from './pages/Home/Home';
 import MovieDetails from './pages/MovieDetails/MovieDetails'
 import MovieList from './pages/MovieList/MovieList';
+import CategoryMovieList from './pages/CategoryMovieList/CategoryMovieList';
 
 
 const router = createBrowserRouter ([
@@ -18,6 +19,11 @@ const router = createBrowserRouter ([
   {
     path: "/list/:slug",
     element : <MovieList />,
+  },
+
+  {
+    path: "/category-movie-list/:slug/:name",
+    element : <CategoryMovieList />,
   },
   
   {
