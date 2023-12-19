@@ -16,13 +16,14 @@ function Placeholder() {
 }
 
 function Categories({categories}) {
-    let { slug, name } = useParams();
+    let { category_id } = useParams();
     return(
         <>
             <div className="d-flex align-item-center gap-3 overflow-x-scroll">
                 {categories.map((category, index) => {
+                    let name = category.name.toLowerCase().replaceAll('-','_');
                     return (
-                        <Link to={`/category-movie-list/${category.id}/${category.name}`} className={`btn btn-secondary ${slug == category.id ? 'active' : ''}`} key={`category-${index}`}>
+                        <Link to={`/category-movie-list/${category.id}/${name}`} className={`btn btn-secondary ${category_id == category.id ? 'active' : ''}`} key={`category-${index}`}>
                         {/* {category && category.name ? category.name : 'Unnamed Category'} */}
                         {category.name}
 

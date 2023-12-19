@@ -63,7 +63,7 @@ function SliderMovieSection({type}) {
     let [movies, setMovies] = useState([]);
 
     useEffect (() => {
-        ApiService.get(`movie/${type}`)
+        ApiService.get(`movie/${type.replace('-','_')}`)
             .then((data) => {
                 setMovies(data.results);
 

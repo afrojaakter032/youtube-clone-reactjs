@@ -8,7 +8,7 @@ function Home() {
         <>
             <Layout>
                 <CategorySection />
-                {['now_playing', 'popular', 'top_rated', 'upcoming'].map(type =>(
+                {['now-playing', 'popular', 'top-rated', 'upcoming'].map(type =>(
                     <SliderMovieSection key={`slider-movie-section-${type}`} type={type} />
                 ))};
             </Layout>
