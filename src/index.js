@@ -8,6 +8,7 @@ import Home from './pages/Home/Home';
 import MovieDetails from './pages/MovieDetails/MovieDetails'
 import MovieList from './pages/MovieList/MovieList';
 import CategoryMovieList from './pages/CategoryMovieList/CategoryMovieList';
+import SearchMovieList from './pages/SearchMovieList/SearchMovieList';
 
 
 const router = createBrowserRouter ([
@@ -19,6 +20,10 @@ const router = createBrowserRouter ([
   {
     path: "/list/:slug",
     element : <MovieList />,
+  },
+  {
+    path: "/search/:slug",
+    element : <SearchMovieList />,
   },
 
   {

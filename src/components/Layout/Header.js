@@ -1,6 +1,9 @@
-import {Link} from "react-router-dom"
+import {Link, useNavigate } from "react-router-dom"
 import Button from "../UI/Button";
+
 function Header () {
+    const navigate = useNavigate();
+
     const openMenu = () => document.querySelector('.sidebar').classList.add('open')
     return(
         <>
@@ -29,7 +32,8 @@ function Header () {
                         <div className="d-flex align-items-center justify-content-center gap-3">
                             <div className="search-input-group">
                                 <input type="text" className="search-input" id="search" placeholder="Search" />
-                                <button className=" btn search-btn">
+
+                                <button className=" btn search-btn" onClick={() => navigate('/search/' +  document.querySelector('#search').value)}>
                                     <i className="ph ph-magnifying-glass"></i>
                                 </button>
                             </div>
