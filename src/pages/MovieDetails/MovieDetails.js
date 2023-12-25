@@ -1,14 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Layout from "../../components/Layout/Layout";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import VideoSection from "./_VideoSection";
 import DescriptionSection from "./_DescriptionSection";
 import CommentSection from "./_CommentSection";
 import SidebarVideoSection from "./_SidebarVideoSection";
+import ApiService from "../../services/ApiService";
 
 function MovieDetails() {
     // let movieIndex = 0;
+    let [isLoading, setIsLoading] = useState(true)
+    let [movie, setMovie] = useState([0]);
     let [movieIndex, setMovieIndex] = useState(0);
+    let { movie_id } = useParams();
 
     let movies = [
         {
@@ -77,7 +81,19 @@ function MovieDetails() {
         },
     ];
 
-    let movie = movies[movieIndex];
+
+    useEffect (() => {
+        setIsLoading(true);
+        ApiService.get(`movie/`+movie_id)
+            .then((data) => {
+                setMovie(data);
+
+                setIsLoading(false);
+             });
+
+    }, [movie_id]);
+
+    // let movie = movies[movieIndex];
 
     function previous() {
         if (movieIndex === 0) {

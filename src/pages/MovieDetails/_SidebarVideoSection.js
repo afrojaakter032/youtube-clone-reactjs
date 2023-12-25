@@ -8,7 +8,7 @@ function SidebarVideoSection (){
                 {[1, 2, 3, 4, 5].map(() => (
                     <div className="d-sm-flex gap-3 mb-3">
                         <div>
-                            <img className="rounded" src="./asstes/images/vedios/card1.jpg" width="150" height="100" />
+                            <img className="rounded" src="/asstes/images/vedios/card1.jpg" width="150" height="100" />
                         </div>
 
                         <div>

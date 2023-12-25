@@ -54,12 +54,6 @@ function MovieList() {
     let [page, setPage] = useState(1);
     let { slug } = useParams();
 
-    // if( slug ==='now_playing' || slug ==='popular' || slug ==='top_rated' || slug ==='upcoming'){
-
-    // } else {
-    //     return redirect("/");
-    // }
-
     useEffect (() => {
         setIsLoading(true);
         ApiService.get(`movie/${slug}`, {'page': page, 'language': 'en'})

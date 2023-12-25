@@ -9,13 +9,14 @@ export default function VideoSection({movie}) {
         <>
             <div>
                 <div>
-                    <video className="w-100" controls>
+                    {/* <video className="w-100" controls>
                         <source src="https://www.w3schools.com/html/mov_bbb.mp4" />
                         Your browser does not support the video tag.
-                    </video>
+                    </video> */}
+                    <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt="Image" height="auto" width="100%" />
                 </div>
 
-                <div className="h2">{movie.title}</div>
+                <div className="h2">{movie.original_title}</div>
 
                 <div className="d-flex flex-wrap justify-content-between align-items-center gap-3">
                     <div className="d-flex flex-wrap align-items-center gap-3">
