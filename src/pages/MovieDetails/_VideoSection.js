@@ -13,7 +13,7 @@ export default function VideoSection({movie}) {
                         <source src="https://www.w3schools.com/html/mov_bbb.mp4" />
                         Your browser does not support the video tag.
                     </video> */}
-                    <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt="Image" height="auto" width="100%" />
+                    <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt="Image" height="auto" width="60%" />
                 </div>
 
                 <div className="h2">{movie.original_title}</div>

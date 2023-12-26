@@ -6,6 +6,7 @@ import DescriptionSection from "./_DescriptionSection";
 import CommentSection from "./_CommentSection";
 import SidebarVideoSection from "./_SidebarVideoSection";
 import ApiService from "../../services/ApiService";
+import CategorySection from "../Home/_CategorySection";
 
 function MovieDetails() {
     // let movieIndex = 0;
@@ -114,11 +115,12 @@ function MovieDetails() {
     return (
         <>
             <Layout>
-                <section className="video-details-section px-3">
+                <CategorySection />
+                <section className="video-details-section px-3 mt-5">
                     <div className="row">
                         <div className="col-md-8">
                             <VideoSection movie={movie} />
-                            <DescriptionSection />
+                            <DescriptionSection movie={movie} />
                             <CommentSection />
                         </div>
 
