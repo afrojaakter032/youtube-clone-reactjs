@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 function Footer () {
@@ -10,16 +11,16 @@ function Footer () {
                             <div className="col-xl-7">
                                 <ul className="nav footer-menu justify-content-center justify-content-xl-start">
                                     <li className="nav-item">
-                                        <a href="#" className="nav-link text-dark py-0 ps-0">About</a>
+                                        <Link to="/about" className="nav-link text-dark py-0 ps-0">About</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <a href="#" className="nav-link text-dark py-0">Terms and Conditions</a>
+                                        <Link to="/terms" className="nav-link text-dark py-0">Terms and Conditions</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <a href="#" className="nav-link text-dark py-0">Privicy Policy</a>
+                                        <Link to="/privicy" className="nav-link text-dark py-0">Privicy Policy</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <a href="#" className="nav-link text-dark py-0">Contact</a>
+                                        <Link to="/contact" className="nav-link text-dark py-0">Contact</Link>
                                     </li>
                                 </ul>
                             </div>

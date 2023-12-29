@@ -9,6 +9,11 @@ import MovieDetails from './pages/MovieDetails/MovieDetails'
 import MovieList from './pages/MovieList/MovieList';
 import CategoryMovieList from './pages/CategoryMovieList/CategoryMovieList';
 import SearchMovieList from './pages/SearchMovieList/SearchMovieList';
+import About from './pages/About';
+import Terms from './pages/Terms';
+import Privicy from './pages/Privicy';
+import Contact from './pages/contact';
+
 
 
 const router = createBrowserRouter ([
@@ -34,6 +39,23 @@ const router = createBrowserRouter ([
   {
     path: "/details/:movie_id",
     element : <MovieDetails />,
+  },
+
+  {
+    path: "/about",
+    element : <About />,
+  },
+  {
+    path: "/terms",
+    element : <Terms />,
+  },
+  {
+    path: "/privicy",
+    element : <Privicy />,
+  },
+  {
+    path: "/contact",
+    element : <Contact />,
   }
 ]);
 

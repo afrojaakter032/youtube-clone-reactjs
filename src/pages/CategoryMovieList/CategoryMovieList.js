@@ -54,12 +54,6 @@ function CategoryMovieList() {
     let [page, setPage] = useState(1);
     let { slug, name } = useParams();
 
-    // if( slug ==='now_playing' || slug ==='popular' || slug ==='top_rated' || slug ==='upcoming'){
-
-    // } else {
-    //     return redirect("/");
-    // }
-
     useEffect (() => {
         setIsLoading(true);
         ApiService.get(`discover/movie/`, {'page': page, 'with_genres': 'slug'})

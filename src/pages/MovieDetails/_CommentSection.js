@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 
 function CommentSection (){
     return (
@@ -9,7 +9,7 @@ function CommentSection (){
                 </div>
 
                 <div className="d-flex gap-3 mt-2">
-                    <label className="display-4" for="comment">
+                    <label className="display-4" htmlFor="comment">
                         <i className="ph ph-user-circle"></i>
                     </label>
 
@@ -17,8 +17,8 @@ function CommentSection (){
                 </div>
 
                 <div className="mt-3">
-                    {[1, 2, 3, 4, 5].map(() => (
-                        <div className="">
+                    {[1, 2, 3, 4, 5].map((index) => (
+                        <div key={`Component-${index}`}>
                             <div className="display-6"><i className="ph ph-user-circle"></i></div>
 
                             <div>

@@ -125,11 +125,11 @@ function MovieDetails() {
                         </div>
 
                         <div className="col-md-4">
-                            <SidebarVideoSection />
+                            <SidebarVideoSection movie={movie} />
                         </div>
                     </div>
 
-                    <div className="row">
+                    {/* <div className="row">
                         <div className="col-md-12 mt-5">
                             <div className="d-flex justify-content-center gap-3">
                                 <button
@@ -149,7 +149,7 @@ function MovieDetails() {
                                 </button>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </section>
             </Layout>
         </>
