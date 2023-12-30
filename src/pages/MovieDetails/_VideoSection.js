@@ -11,7 +11,13 @@ export default function VideoSection({movie}) {
         <>
             <div>
                 <div>
-                    <Plyr source={"https://www.w3schools.com/html/mov_bbb.mp4"}/>
+                    <Plyr source={{
+                        type: 'video',
+                        poster: `https://image.tmdb.org/t/p/original/${movie.poster_path}`,
+                        sources: [
+                            {src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4',}
+                        ],
+                    }} />
                     {/* <video className="w-100" controls>
                         <source src="https://www.w3schools.com/html/mov_bbb.mp4" />
                         Your browser does not support the video tag.

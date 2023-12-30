@@ -10,7 +10,7 @@ function Contact(event) {
         let subject = document.getElementById('subject').value;
         let email = document.getElementById('email').value;
         let message = document.getElementById('message').value;
-        let html = "Subject: " + subject + "Name: " + name + "<br/>Email: " + email + "<br/>Message: " 
+        let html = "Subject: " + subject + "Name: " + name + "<br/>Email: " + email + "<br/>Message:" 
     return(
         <>
             <Layout>
@@ -19,7 +19,7 @@ function Contact(event) {
 
                         <h1>CONTACT</h1>
                         <div>
-                        <form onSubmit={submit}>
+                        <form >
                             <div className="form-group mb-2">
                                 <label htmlFor="name">Name</label>
                                 <input type="text" className="form-control" id="name" placeholder="Enter name" required />
