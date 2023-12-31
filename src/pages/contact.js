@@ -11,6 +11,33 @@ function Contact(event) {
         let email = document.getElementById('email').value;
         let message = document.getElementById('message').value;
         let html = "Subject: " + subject + "Name: " + name + "<br/>Email: " + email + "<br/>Message:" 
+
+        var data = {
+            service_id: 'service_m3t708o',
+            template_id: 'template_l6ujmpl',
+            user_id: 'sXLlLGck3FWoncBgv',
+            template_params: {
+                'name': name,
+                'html': html,
+            }
+        };
+        document.getElementById('submit').disabled = true;
+
+        fetch('https://api.emailjs.com/api/v1.0/email/send', {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        }).then(res => {
+            document.getElementById('submit').disabled = false;
+
+            document.getElementById('name').value = '';
+            document.getElementById('subject').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('message').value = '';
+        });
+
     return(
         <>
             <Layout>
@@ -19,7 +46,7 @@ function Contact(event) {
 
                         <h1>CONTACT</h1>
                         <div>
-                        <form >
+                        <form onSubmit={submit}>
                             <div className="form-group mb-2">
                                 <label htmlFor="name">Name</label>
                                 <input type="text" className="form-control" id="name" placeholder="Enter name" required />
