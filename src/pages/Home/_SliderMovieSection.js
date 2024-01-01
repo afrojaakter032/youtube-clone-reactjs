@@ -14,6 +14,20 @@ function Placeholder() {
             <Swiper
                 spaceBetween={20}
                 slidesPerView={5}
+                breakpoints={{
+                    0: {
+                        slidesPerView: 1
+                    },
+                    576: {
+                        slidesPerView: 2
+                    },
+                    768: {
+                        slidesPerView: 3
+                    },
+                    992: {
+                        slidesPerView: 5
+                    },
+                }}
             >
             {[1,2,3,4,5].map((item) =>
                 <SwiperSlide key={`category-placeholder-${item}`}>
@@ -43,6 +57,20 @@ function Movies({movies}) {
                 modules={[Navigation]}
                 spaceBetween={20}
                 slidesPerView={5}
+                breakpoints={{
+                    0: {
+                        slidesPerView: 1
+                    },
+                    576: {
+                        slidesPerView: 2
+                    },
+                    768: {
+                        slidesPerView: 3
+                    },
+                    992: {
+                        slidesPerView: 5
+                    },
+                }}
                 navigation
             >
                 {movies.map((movie, index) => {
