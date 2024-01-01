@@ -4,7 +4,11 @@ import CategorySection from "./Home/_CategorySection";
 
 
 function Contact(event) {
-    event.preventDefault();
+    function submit (event) {
+        event.preventDefault();
+
+    
+    
 
         let name = document.getElementById('name').value;
         let subject = document.getElementById('subject').value;
@@ -37,6 +41,7 @@ function Contact(event) {
             document.getElementById('email').value = '';
             document.getElementById('message').value = '';
         });
+    }    
 
     return(
         <>
@@ -70,8 +75,6 @@ function Contact(event) {
                             <button type="submit" id="submit" className="btn btn-primary">Submit</button>
                         </form>
                     </div>
-
-                        
                     </section>   
             </Layout>
 
