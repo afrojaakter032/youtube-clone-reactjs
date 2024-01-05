@@ -1,8 +1,10 @@
-import {Link, useNavigate } from "react-router-dom"
+'use client';
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import Button from "../UI/Button";
 
 function Header () {
-    const navigate = useNavigate();
+    const navigate = null;
 
     const openMenu = () => document.querySelector('.sidebar').classList.add('open')
     return(
@@ -22,7 +24,7 @@ function Header () {
                                 </button>
                             </div>
                             <div className="logo">
-                                <Link to="/">
+                                <Link href="/">
                                     <img src="/asstes/images/logo.png" alt="logo" />
                                 </Link>
                             </div>

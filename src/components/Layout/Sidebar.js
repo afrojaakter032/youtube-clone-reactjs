@@ -1,4 +1,4 @@
-
+'use client';
 function Sidebar () {
     const closeMenu = () => document.querySelector('.sidebar').classList.remove('open')
     return (
