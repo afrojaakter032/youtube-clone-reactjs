@@ -46,20 +46,31 @@ function SidebarVideoSection({ movie }) {
     return (
         <>
             <div>
-                {relatedMovies.map((relatedMovie, index) => (
-                    <div className="d-sm-flex gap-3 mb-3" key={`movie-${index}`}>
-                        <div>
-                            <img className="rounded" src={`https://image.tmdb.org/t/p/original/${relatedMovie.poster_path}`} alt="Image" width="150" height="100" />
-                        </div>
-
-                        <div>
-                            <div className="fw-bold">
-                                <Link to={`/details/${relatedMovie.id}`} className="text-primary text-decoration-none">{relatedMovie.title}</Link>
+                {isLoading ?
+                    <>
+                        <div className="d-flex justify-content-center">
+                            <div className="spinner-border text-primary" role="status">
+                                <span className="visually-hidden">Loading...</span>
                             </div>
-                        <div className="card-meta">{relatedMovie.release_date}</div>
                         </div>
-                    </div>
-                ))}
+                    </> :
+                    <>
+                        {relatedMovies.map((relatedMovie, index) => (
+                            <div className="d-sm-flex gap-3 mb-3" key={`movie-${index}`}>
+                                <div>
+                                    <img className="rounded" src={`https://image.tmdb.org/t/p/original/${relatedMovie.poster_path}`} alt="Movie" width="150" height="100" />
+                                </div>
+
+                                <div>
+                                    <div className="fw-bold">
+                                        <Link to={`/details/${relatedMovie.id}`} className="text-primary text-decoration-none">{relatedMovie.title}</Link>
+                                    </div>
+                                <div className="card-meta">{relatedMovie.release_date}</div>
+                                </div>
+                            </div>
+                        ))}
+                    </>
+                }
             </div>
         </>
     );

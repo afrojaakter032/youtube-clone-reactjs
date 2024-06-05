@@ -13,7 +13,7 @@ function Contact(event) {
         let name = document.getElementById('name').value;
         let subject = document.getElementById('subject').value;
         let email = document.getElementById('email').value;
-        let message = document.getElementById('message').value;
+        // let message = document.getElementById('message').value;
         let html = "Subject: " + subject + "Name: " + name + "<br/>Email: " + email + "<br/>Message:" 
 
         var data = {

@@ -5,7 +5,7 @@ function MovieCard ({movie}) {
         <>
             <div className="card">
                 <div className="card-img">
-                    <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt="Image" />
+                    <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt="Movie" />
                 </div>
 
                 <div className="d-flex gap-3 mt-2">

@@ -2,6 +2,7 @@
 import React from 'react'
 import Plyr from "plyr-react"
 import "plyr-react/plyr.css"
+import { Link } from 'react-router-dom'
 
 
 export default function VideoSection({movie}) {
@@ -34,7 +35,7 @@ export default function VideoSection({movie}) {
                         </div>
 
                         <div>
-                            <div><a href="#" className="text-black text-decoration-none fw-bold">Friends</a></div>
+                            <div><Link to="/" className="text-black text-decoration-none fw-bold">Friends</Link></div>
                             <div className="text-muted">1.5k Subscribers</div>
                         </div>
 

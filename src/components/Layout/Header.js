@@ -65,16 +65,16 @@ function Header () {
                                 <Button className="bg-transparent" icon="ph ph-user" title= "user" />
                                 <ul className="dropdown-menu">
                                     <li className="dropdown-item">
-                                        <a className="dropdown-link" href="#">Log in</a>
+                                        <Link className="dropdown-link" to="/">Log in</Link>
                                     </li>
                                     <li className="dropdown-item">
-                                        <a className="dropdown-link" href="#">Register</a>
+                                        <Link className="dropdown-link" to="/">Register</Link>
                                     </li>
                                     <li className="dropdown-item d-block d-sm-none">
-                                        <a className="dropdown-link" href="#">Video creator</a>
+                                        <Link className="dropdown-link" to="/">Video creator</Link>
                                     </li>
                                     <li className="dropdown-item d-block d-sm-none">
-                                        <a className="dropdown-link" href="#">Notification</a>
+                                        <Link className="dropdown-link" to="/">Notification</Link>
                                     </li>
                                 </ul>
 

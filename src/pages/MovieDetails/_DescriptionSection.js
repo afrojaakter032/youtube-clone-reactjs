@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 
 export default function DescriptionSection({movie}) {
     let [showMore, setShowMore] = useState(false);
@@ -11,9 +12,9 @@ export default function DescriptionSection({movie}) {
                 <div className="d-flex flex-wrap gap-3"><b>951,486 views</b>  <b>Jul 28, 2022</b></div>
 
                 <div className="d-flex flex-wrap gap-3">
-                    <a href="#">#MattLeBlanc</a>
-                    <a href="#">#JenniferAniston</a>
-                    <a href="#">#LisaKudrow</a>
+                    <Link to="/">#MattLeBlanc</Link>
+                    <Link to="/">#JenniferAniston</Link>
+                    <Link to="/">#LisaKudrow</Link>
                 </div>
 
                 <p>

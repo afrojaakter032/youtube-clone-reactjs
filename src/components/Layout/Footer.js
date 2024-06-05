@@ -25,7 +25,7 @@ function Footer () {
                                 </ul>
                             </div>
                             <div className="col-xl-5 text-center text-xl-end" >
-                                copyright &copy; 2023 <a href="#">youtube-clone.com.</a>All rights reserved
+                                copyright &copy; 2023 <Link to="/">youtube-clone.com.</Link>All rights reserved
                             </div>
                         </div>
 

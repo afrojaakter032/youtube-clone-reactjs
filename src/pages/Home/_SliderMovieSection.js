@@ -97,7 +97,7 @@ function SliderMovieSection({type}) {
 
                 setIsLoading(false)
              });
-    }, []);
+    }, [type]);
 
     
 
